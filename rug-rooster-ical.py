@@ -21,23 +21,56 @@ def parse_datetime(value):
 def event_description(item):
     lines = []
 
+    courses = item.get("courseOfferings", [])
+    if courses:
+        lines.append("Courses:")
+        for course in courses:
+            lines.append(
+                f"- {course['displayNameEn']} ({course['courseCode']})"
+            )
+
+    activity_type = item.get("activityType")
+    if activity_type:
+        lines.append("")
+        lines.append(f"Type: {activity_type['displayNameEn']}")
+
+    description = item.get("description")
+    if description:
+        lines.append(f"Activity: {description}")
+
     groups = item.get("studentGroups", [])
     if groups:
+        lines.append("")
         lines.append("Student groups:")
         for group in groups:
             lines.append(f"- {group['displayNameEn']}")
 
-    description = item.get("description")
-    if description:
-        if lines:
-            lines.append("")
-        lines.append(f"Activity: {description}")
+    rooms = item.get("rooms", [])
+    if rooms:
+        lines.append("")
+        lines.append("Rooms:")
+        for room in rooms:
+            lines.append(f"- {room['code']} - {room['displayNameEn']}: {room['urlMap']}")
+
+    staff = item.get("staff", [])
+    if staff:
+        lines.append("")
+        lines.append("Staff:")
+        for person in staff:
+            lines.append(f"- {person['displayNameEn']}")
 
     comment = item.get("comment")
     if comment:
-        if lines:
-            lines.append("")
-        lines.append(comment)
+        lines.append("")
+        lines.append(f"Comment: {comment}")
+
+    if item.get("preliminary"):
+        lines.append("")
+        lines.append("PRELIMINARY")
+
+    if item.get("changed"):
+        lines.append("")
+        lines.append("CHANGED")
 
     return "\n".join(lines)
 
