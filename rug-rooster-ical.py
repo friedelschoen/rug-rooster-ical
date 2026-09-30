@@ -206,12 +206,16 @@ def event_location(item):
     return f"{name}\n{address}"
 
 
-def fetch_calendar(courses):
+def fetch_calendar(courses, objects):
+    print({
+        "courseOfferingCodes": courses,
+        "objects": objects,
+    })
     response = requests.post(
         ROOSTER_URL,
         json={
-            "objects": [],
             "courseOfferingCodes": courses,
+            "objects": objects,
         },
         timeout=15,
     )
@@ -247,23 +251,29 @@ class CalendarHandler(BaseHTTPRequestHandler):
 
         query = parse_qs(url.query)
 
-        course_offering = query.get("courseOffering")
-        if not course_offering:
-            self.send_error(400, "Missing courseOffering")
-            return
+        # https://rooster.rug.nl/current?programmeOffering=199346&studentGroup=244807&room=115915&courseOffering=WBMA029-05.2026-2027.1
 
-        courses = [
-            course.strip()
-            for course in course_offering[0].split(",")
-            if course.strip()
-        ]
+        course_offering_codes = []
+        objects = []
 
-        if not courses:
-            self.send_error(400, "Empty courseOffering")
+        for q in query.get("courseOffering", ""):
+            course_offering_codes += q.split(",")
+
+        for q in query.get("programmeOffering", ""):
+            objects += q.split(",")
+
+        for q in query.get("studentGroup", ""):
+            objects += q.split(",")
+
+        for q in query.get("room", ""):
+            objects += q.split(",")
+
+        if not course_offering_codes and not objects:
+            self.send_error(400)
             return
 
         try:
-            calendar = fetch_calendar(courses)
+            calendar = fetch_calendar(course_offering_codes, objects)
             body = calendar.encode("utf-8")
         except (
             requests.RequestException,
@@ -285,5 +295,5 @@ class CalendarHandler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     server = HTTPServer(("0.0.0.0", 6565), CalendarHandler)
-    print("Serving calendar on http://127.0.0.1:6565/calendar.ics")
+    print("Serving calendar on http://0.0.0.0:6565/calendar.ics")
     server.serve_forever()
