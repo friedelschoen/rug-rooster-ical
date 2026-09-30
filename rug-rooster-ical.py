@@ -14,90 +14,90 @@ ROOSTER_URL = os.getenv("ROOSTER_URL", "https://rooster.rug.nl/maat/api/2026-202
 TIMEZONE = ZoneInfo(os.getenv("ROOSTER_Z", "Europe/Amsterdam"))
 
 BUILDINGS = {
-    '1111': ('Broerstraat 5, 9712 CP Groningen, Nederland', 'Academic building'),
-    '1112': ('Broerstraat 5, 9712 CP Groningen, Nederland', 'Academic building'),
-    '1113': ("Oude Kijk in Het Jatstraat 39, 9712 EB Groningen, Nederland", ''),
-    '1114': ("Oude Kijk in 't Jatstraat 41/41a, 9712 EB Groningen, Nederland", ''),
-    '1116': ('Broerstraat 5, 9712 CP Groningen, Nederland', 'Academic building'),
-    '1117': ('Muurstraat 14, 9712 EN Groningen, Nederland', ''),
-    '1121': ('Oude Boteringestraat 44, 9712 GL Groningen, Nederland', 'Administration building'),
-    '1124': ('Oude Boteringestraat 38', ''),
-    '1126': ('Oude Boteringestraat 34', ''),
-    '1131': ('Oude Boteringestraat 52', ''),
-    '1134': ('Broerstraat 9', ''),
-    '1211': ('Broerstraat 4', ''),
-    '1212': ('Poststraat 6', ''),
-    '1213': ("Oude Kijk in 't Jatstraat 7a", ''),
-    '1219': ("Oude Kijk in 't Jatstraat 7a", ''),
-    '1215': ("Oude Kijk in 't Jatstraat 9", ''),
-    '1217': ('Oude Boteringestraat 18', 'Röling building'),
-    '1221': ('Oude Boteringestraat 24', 'Calmershuis'),
-    '1311': ("Oude Kijk in 't Jatstraat 26", 'Harmoniecomplex'),
-    '1312': ("Oude Kijk in 't Jatstraat 26", 'Harmoniecomplex'),
-    '1313': ("Oude Kijk in 't Jatstraat 26", 'Harmoniecomplex'),
-    '1314': ("Oude Kijk in 't Jatstraat 26", 'Harmoniecomplex'),
-    '1315': ("Oude Kijk in 't Jatstraat 26", 'Harmoniecomplex'),
-    '1321': ("Oude Kijk in 't Jatstraat 28", ''),
-    '1323': ('Turftorenstraat 21', ''),
-    '1325': ('Uurwerkersgang 10', ''),
-    '2111': ('Grote Rozenstraat 38', 'Nieuwenhuis building'),
-    '2211': ('Grote Kruisstraat 2/1', 'Heymans building'),
-    '2213': ('Grote Kruisstraat 2/1', 'Heymans building'),
-    '2212': ('Grote Kruisstraat 2/1', 'Munting building'),
-    '2221': ('Grote Rozenstraat 1', 'Bouman building'),
-    '2222': ('Grote Rozenstraat 17', 'Gadourek building'),
-    '2223': ('Grote Rozenstraat 15', 'Snijders building'),
-    '2224': ('Grote Rozenstraat 3', 'Van Gelder building'),
-    '2231': ("Nieuwe Kijk in 't Jatstraat 68/70", 'Jantina Tammes house'),
-    '3111': ('Antonius Deusinglaan 2', ''),
-    '3211': ('Antonius Deusinglaan 1', 'MWF complex (UMCG)'),
-    '3227': ('Antonius Deusinglaan 1', 'Anda Kerkhoven Centre (HAC)'),
-    '4122': ('Bloemstraat 36/36a', ''),
-    '4123': ('Bloemstraat 36/36a', ''),
-    '4335': ('A-weg 30', ''),
-    '4336': ('Munnikeholm 10', 'USVA cultural student centre'),
-    '4345': ('Hoendiepskade 23/24', ''),
-    '4411': ('Visserstraat 47/49', ''),
-    '4428': ('Grote Markt 21', 'Het Groot Handelshuis'),
-    '4451': ('Oude Ebbingestraat 25', ''),
-    '5111': ('Nijenborgh 4', 'Nijenborgh'),
-    '5112': ('Nijenborgh 4', 'Nijenborgh'),
-    '5113': ('Nijenborgh 4', 'Nijenborgh'),
-    '5114': ('Nijenborgh 4', 'Nijenborgh'),
-    '5115': ('Nijenborgh 4', 'Nijenborgh'),
-    '5116': ('Nijenborgh 4', 'Nijenborgh'),
-    '5143': ('Zernikelaan 1', 'Porters lodge'),
+    '1111': ('Broerstraat 5, 9712 CP Groningen, Nederland', 'Academic Building'),
+    '1112': ('Broerstraat 5, 9712 CP Groningen, Nederland', 'Academic Building'),
+    '1113': ("Oude Kijk in Het Jatstraat 39, 9712 EB Groningen, Nederland", None),
+    '1114': ("Oude Kijk in 't Jatstraat 41/41a, 9712 EB Groningen, Nederland", None),
+    '1116': ('Broerstraat 5, 9712 CP Groningen, Nederland', 'Academic Building'),
+    '1117': ('Muurstraat 14, 9712 EN Groningen, Nederland', None),
+    '1121': ('Oude Boteringestraat 44, 9712 GL Groningen, Nederland', 'Administration Building'),
+    '1124': ('Oude Boteringestraat 38, 9712 GK Groningen, Nederland', None),
+    '1126': ('Oude Boteringestraat 34, 9712 GK Groningen, Nederland', None),
+    '1131': ('Oude Boteringestraat 52, 9712 GL Groningen, Nederland', None),
+    '1134': ('Broerstraat 9, 9712 CP Groningen, Nederland', None),
+    '1211': ('Broerstraat 4, 9712 CP Groningen, Nederland', None),
+    '1212': ('Poststraat 6, 9712 CP Groningen, Nederland', None),
+    '1213': ("Oude Kijk in 't Jatstraat 7a, 9712 CP Groningen, Nederland", None),
+    '1219': ("Oude Kijk in 't Jatstraat 7a, 9712 CP Groningen, Nederland", None),
+    '1215': ("Oude Kijk in 't Jatstraat 9, 9712 EA Groningen, Nederland", None),
+    '1217': ('Oude Boteringestraat 18, 9712 ER Groningen, Nederland', 'Röling Building'),
+    '1221': ('Oude Boteringestraat 24, 9712 GH Groningen, Nederland', 'Calmershuis'),
+    '1311': ("Oude Kijk in 't Jatstraat 26, 9712 GR Groningen, Nederland", 'Harmoniecomplex'),
+    '1312': ("Oude Kijk in 't Jatstraat 26, 9712 GR Groningen, Nederland", 'Harmoniecomplex'),
+    '1313': ("Oude Kijk in 't Jatstraat 26, 9712 GR Groningen, Nederland", 'Harmoniecomplex'),
+    '1314': ("Oude Kijk in 't Jatstraat 26, 9712 GR Groningen, Nederland", 'Harmoniecomplex'),
+    '1315': ("Oude Kijk in 't Jatstraat 26, 9712 GR Groningen, Nederland", 'Harmoniecomplex'),
+    '1321': ("Oude Kijk in 't Jatstraat 28, 9712 EK Groningen, Nederland", None),
+    '1323': ('Turftorenstraat 21, 9712 EK Groningen, Nederland', None),
+    '1325': ('Uurwerkersgang 10, 9712 EJ Groningen, Nederland', None),
+    '2111': ('Grote Rozenstraat 38, 9712 EK Groningen, Nederland', 'Nieuwenhuis Building'),
+    '2211': ('Grote Kruisstraat 2/1, 9712 TH Groningen, Nederland', 'Heymans Building'),
+    '2213': ('Grote Kruisstraat 2/1, 9712 TH Groningen, Nederland', 'Heymans Building'),
+    '2212': ('Grote Kruisstraat 2/1, 9712 TH Groningen, Nederland', 'Munting Building'),
+    '2221': ('Grote Rozenstraat 1, 9712 TG Groningen, Nederland', 'Bouman Building'),
+    '2222': ('Grote Rozenstraat 17, 9712 TG Groningen, Nederland', 'Gadourek Building'),
+    '2223': ('Grote Rozenstraat 15, 9712 TG Groningen, Nederland', 'Snijders Building'),
+    '2224': ('Grote Rozenstraat 3, 9712 TG Groningen, Nederland', 'Van Gelder Building'),
+    '2231': ("Nieuwe Kijk in 't Jatstraat 68/70, 9712 SK Groningen, Nederland", 'Jantina Tammes House'),
+    '3111': ('Antonius Deusinglaan 2, 9713 AW Groningen, Nederland', None),
+    '3211': ('Antonius Deusinglaan 1, 9713 AP Groningen, Nederland', 'MWF complex (UMCG)'),
+    '3227': ('Antonius Deusinglaan 1, 9713 AP Groningen, Nederland', 'Anda Kerkhoven Centre (HAC)'),
+    '4122': ('Bloemstraat 36/36a, 9712 LE Groningen, Nederland', None),
+    '4123': ('Bloemstraat 36/36a, 9712 LE Groningen, Nederland', None),
+    '4335': ('A-weg 30, 9718 CW Groningen, Nederland', None),
+    '4336': ('Munnikeholm 10, 9711 JA Groningen, Nederland', 'USVA Cultural Student Centre'),
+    '4345': ('Hoendiepskade 23/24, 9718 BG Groningen, Nederland', None),
+    '4411': ('Visserstraat 47/49, 9712 CT Groningen, Nederland', None),
+    '4428': ('Grote Markt 21, 9712 EK Groningen, Nederland', 'Het Groot Handelshuis'),
+    '4451': ('Oude Ebbingestraat 25, 9712 HA Groningen, Nederland', None),
+    '5111': ('Nijenborgh 4, 9747 AG Groningen, Nederland', 'Nijenborgh'),
+    '5112': ('Nijenborgh 4, 9747 AG Groningen, Nederland', 'Nijenborgh'),
+    '5113': ('Nijenborgh 4, 9747 AG Groningen, Nederland', 'Nijenborgh'),
+    '5114': ('Nijenborgh 4, 9747 AG Groningen, Nederland', 'Nijenborgh'),
+    '5115': ('Nijenborgh 4, 9747 AG Groningen, Nederland', 'Nijenborgh'),
+    '5116': ('Nijenborgh 4, 9747 AG Groningen, Nederland', 'Nijenborgh'),
+    '5143': ('Zernikelaan 1, 9747 AA Groningen, Nederland', 'Porters Lodge'),
     '5161': ('Nijenborgh 9, 9747 AG Groningen, Nederland', 'Bernoulliborg'),
-    '5158': ('Nijenborgh 6', 'Energy Academy Europa'),
-    '5159': ('Nijenborgh 6', 'Energy Academy Europa'),
-    '5171': ('Nijenborgh 7', 'Linnaeusborg'),
-    '5172': ('Nijenborgh 7', 'Linnaeusborg'),
-    '5173': ('Nijenborgh 7', 'Linnaeusborg'),
-    '5174': ('Nijenborgh 7', 'Linnaeusborg'),
-    '5211': ('Blauwborgje 16', 'Sports Centre'),
-    '5231': ('Nadorstplein 2a', ''),
-    '5236': ('Blauwborgje 8', ''),
-    '5256': ('Blauwborgje 8-10', ''),
-    '5263': ('Blauwborgje 4', 'Aletta Jacobs hal (examination hall)'),
-    '5411': ('Nettelbosje 2', 'Duisenberg building'),
-    '5412': ('Nettelbosje 2', ''),
-    '5414': ('Nettelbosje 2', ''),
-    '5415': ('Landleven 1', ''),
-    '5416': ('Landleven 1', ''),
-    '5417': ('Landleven 1', ''),
-    '5419': ('Landleven 12', 'Kapteynborg'),
-    '5431': ('Nettelbosje 1', 'Smitsborg'),
-    '5433': ('Nettelbosje 2', ''),
-    '5527': ('Kadijk 4', ''),
-    '5612': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa building'),
-    '5613': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa building'),
-    '5614': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa building'),
-    '5615': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa building'),
-    '5616': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa building'),
-    '5711': ('Zernikelaan 25', ''),
-    '7112': ('Heereweg 10 Schiermonnikoog', 'De Herdershut'),
-    '7117': ('Allersmaweg 64 Ezinge', 'Allersmaborg'),
-    '7441': ('Wirdumerdijk 34 Leeuwarden', ''),
+    '5158': ('Nijenborgh 6, 9747 AG Groningen, Nederland', 'Energy Academy Europa'),
+    '5159': ('Nijenborgh 6, 9747 AG Groningen, Nederland', 'Energy Academy Europa'),
+    '5171': ('Nijenborgh 7, 9747 AG Groningen, Nederland', 'Linnaeusborg'),
+    '5172': ('Nijenborgh 7, 9747 AG Groningen, Nederland', 'Linnaeusborg'),
+    '5173': ('Nijenborgh 7, 9747 AG Groningen, Nederland', 'Linnaeusborg'),
+    '5174': ('Nijenborgh 7, 9747 AG Groningen, Nederland', 'Linnaeusborg'),
+    '5211': ('Blauwborgje 16, 9747 AC Groningen, Nederland', 'Sports Centre'),
+    '5231': ('Nadorstplein 2a, 9747 AC Groningen, Nederland', None),
+    '5236': ('Blauwborgje 8, 9747 AC Groningen, Nederland', None),
+    '5256': ('Blauwborgje 8-10, 9747 AC Groningen, Nederland', None),
+    '5263': ('Blauwborgje 4, 9747 AC Groningen, Nederland', 'Aletta Jacobs Hal'),
+    '5411': ('Nettelbosje 2, 9747 AE Groningen, Nederland', 'Duisenberg Building'),
+    '5412': ('Nettelbosje 2, 9747 AE Groningen, Nederland', None),
+    '5414': ('Nettelbosje 2, 9747 AE Groningen, Nederland', None),
+    '5415': ('Landleven 1, 9747 AD Groningen, Nederland', None),
+    '5416': ('Landleven 1, 9747 AD Groningen, Nederland', None),
+    '5417': ('Landleven 1, 9747 AD Groningen, Nederland', None),
+    '5419': ('Landleven 12, 9747 AD Groningen, Nederland', 'Kapteynborg'),
+    '5431': ('Nettelbosje 1, 9747 AJ Groningen, Nederland', 'Smitsborg'),
+    '5433': ('Nettelbosje 2, 9747 AE Groningen, Nederland', None),
+    '5527': ('Kadijk 4, 9747 AT Groningen, Nederland', None),
+    '5612': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa Building'),
+    '5613': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa Building'),
+    '5614': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa Building'),
+    '5615': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa Building'),
+    '5616': ('Nijenborgh 3, 9747 AG Groningen, Nederland', 'Feringa Building'),
+    '5711': ('Zernikelaan 25, 9747 AA Groningen, Nederland', None),
+    '7112': ('Heereweg 10, 9166 SE Schiermonnikoog, Nederland', 'De Herdershut'),
+    '7117': ('Allersmaweg 64, 9891 TD Ezinge, Nederland', 'Allersmaborg'),
+    '7441': ('Wirdumerdijk 34, 8911 CE Leeuwarden, Nederland', None),
 }
 
 
@@ -191,7 +191,7 @@ def event_location(item):
         )
 
     room = rooms[0]
-    building, _, room_number = room["code"].partition(".")
+    building = room["code"].split(".")[0]
 
     if building not in BUILDINGS:
         return f"{room['code']} {room['displayNameEn']}"
@@ -199,18 +199,17 @@ def event_location(item):
     address, building_name = BUILDINGS[building]
 
     if building_name:
-        name = f"{building_name} {room_number} {room['displayNameEn']}"
+        name = f"{room['code']} {building_name}"
     else:
-        name = f"{room['code']} {room['displayNameEn']}"
+        name = room['code']
+
+    if room['displayNameEn']:
+        name += f" - {room['displayNameEn']}"
 
     return f"{name}\n{address}"
 
 
 def fetch_calendar(courses, objects):
-    print({
-        "courseOfferingCodes": courses,
-        "objects": objects,
-    })
     response = requests.post(
         ROOSTER_URL,
         json={
@@ -238,7 +237,7 @@ def fetch_calendar(courses, objects):
 
         calendar.events.add(event)
 
-    return str(calendar)
+    return calendar.serialize()
 
 
 class CalendarHandler(BaseHTTPRequestHandler):
